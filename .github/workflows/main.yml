@@ -1,10 +1,10 @@
 name: Document Conversion
 
-on: push
+on: [push]
 
 jobs:
   convert_to_pdf:
-    name: Convert via Pandoc
+    name: Convert to PDF with Pandoc
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
