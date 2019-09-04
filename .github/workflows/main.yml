@@ -3,15 +3,15 @@ name: Document Conversion
 on: push
 
 jobs:
-  convert_via_pandoc:
+  convert_to_pdf:
     name: Convert via Pandoc
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
       - run: mkdir output
-      - uses: maxheld83/pandoc@master
+      - uses: hubgit/pandoc@master
         with:
-          args: "--standalone --output=output/index.html README.md"
+          args: "--pdf-engine=xelatex --output=output/README.pdf README.md"
       - uses: actions/upload-artifact@master
         with:
           name: output
