@@ -4,7 +4,10 @@ author: 'Max Held'
 runs:
   using: 'docker'
   image: 'docker://pandoc/latex:2.7.3'
-  entrypoint: pandoc
+  entrypoint: sh
+  args:
+    - " -c "
+    - " /usr/bin/pandoc ${{ inputs.pandoc-args }} "
 branding:
   icon: 'book-open'  
   color: 'green'
