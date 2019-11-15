@@ -30,7 +30,8 @@ None.
 
 ## Example Usage
 
-The string passed to `args` gets appended to the [`pandoc` command](https://pandoc.org/MANUAL.html).
+The string passed to `pandoc-args` gets appended to the [`pandoc` command](https://pandoc.org/MANUAL.html).
+The whole command is interpreted by the `sh` shell, so you can use globs (e.g. `source/*.md`) to specify your inputs.
 
 ```
 name: Document Conversion
