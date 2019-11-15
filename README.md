@@ -33,20 +33,20 @@ None.
 The string passed to `args` gets appended to the [`pandoc` command](https://pandoc.org/MANUAL.html).
 
 ```
-name: Convert README to PDF
+name: Document Conversion
 
 on: [push]
 
 jobs:
-  convert_via_pandoc:
-    name: Convert via Pandoc
+  convert_to_pdf:
+    name: Produce the PDF with Pandoc
     runs-on: ubuntu-18.04
     steps:
       - uses: actions/checkout@v1
       - run: mkdir output
-      - uses: maxheld83/pandoc@v2
+      - uses: necto/pandoc@master
         with:
-          args: "--pdf-engine=xelatex --output=output/README.pdf README.md"
+          pandoc-args: "--pdf-engine=xelatex --output=output/README.pdf README.md"
       - uses: actions/upload-artifact@master
         with:
           name: output
