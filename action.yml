@@ -11,7 +11,7 @@ runs:
   image: 'docker://pandoc/latex:2.7.3'
   entrypoint: sh
   args:
-    - " -c "
+    - -c
     - " /usr/bin/pandoc ${{ inputs.pandoc-args }} "
 branding:
   icon: 'book-open'  
